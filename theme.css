@@ -46,12 +46,12 @@ h1 { font-size:clamp(40px,5.25vw,64px); line-height:1.09; letter-spacing:-.045em
 .stage::after { content:""; position:absolute; z-index:-1; width:190px; height:190px; border:35px solid #9cbcff; border-radius:50%; left:-92px; top:60px; transform:rotate(-20deg); }
 .stage-tag { color:#36558d; letter-spacing:.1em; }
 .stage-tag i { background:#4285f4; box-shadow:0 0 0 4px #dce8ff; }
-.scene { width:264px; }
-.card3d { aspect-ratio:264/306; }
-.face-front { padding:0; background:white; border-radius:18px; box-shadow:0 18px 28px -12px #1845a955; }
+.scene { width:270px; }
+.card3d { aspect-ratio:1/1; }
+.face-front { padding:0; background:transparent; border-radius:20px; box-shadow:0 18px 28px -12px #1845a955; }
 .review-card-art { width:100%; height:100%; display:block; object-fit:contain; user-select:none; pointer-events:none; }
 .face-back { background:linear-gradient(145deg,#255be0,#173b94); }
-.edge { background:#d4def0; }
+.edge { background:#e8e8e4; }
 .cb-panel { padding:28px 18px; gap:14px; }
 .cb-word { font-size:25px; }
 .cb-tag { color:#d9e6ff; font-size:10px; }
@@ -132,3 +132,20 @@ footer { background:#fff; }
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; }
 }
+
+/* Galeri contoh pemasangan */
+.galeri{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; }
+.galeri-item{ margin:0; position:relative; border-radius:18px; overflow:hidden; background:#eef4ff; box-shadow:0 14px 28px -18px #1845a966; }
+.galeri-item img{ display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; transition:transform .5s ease; }
+.galeri-item:hover img{ transform:scale(1.04); }
+.galeri-item figcaption{ position:absolute; left:12px; bottom:12px; padding:6px 12px; border-radius:999px; background:#ffffffe6; color:#172b4d; font-size:13px; font-weight:700; }
+@media (max-width:900px){ .galeri{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:520px){ .galeri{ gap:10px; } .galeri-item figcaption{ font-size:11px; left:8px; bottom:8px; } }
+
+/* Produk: dua foto sejajar */
+.bento.bento-2 .prod:first-child{ grid-row:auto; }
+.bento.bento-2 .prod-photo.prod-foto{ padding:0; aspect-ratio:4/5; min-height:0; flex:none; background:#eaf2ff; }
+.prod-foto img{ display:block; width:100%; height:100%; object-fit:cover; transition:transform .5s ease; }
+.prod:hover .prod-foto img{ transform:scale(1.03); }
+.bento.bento-2{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (max-width:899px){ .bento.bento-2{ grid-template-columns:1fr; } }
